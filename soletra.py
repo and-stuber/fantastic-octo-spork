@@ -24,7 +24,7 @@ print("Step 2 - inicia e trata o array de letras")
 letras_permitidas = ["a", "u", "o", "d", "ç", "r", "p"]
 array_letras_portugues = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç']
 
-###############################################################
+##########
 
 letras_a_remover = letras_permitidas
 
@@ -37,28 +37,39 @@ def remover_letras(letras_a_remover, array_letras):
 array_sem_letras = remover_letras(letras_a_remover, array_letras_portugues)
 
 # Print de letras que sao permitidas na busca
-print("Letras permitidas: " + letras_permitidas)
+print(letras_permitidas)
 
 ################################################################
+print("Step 3 - Remove palavras que tem letras nao permitidas")
+
+def limpa_palavras(array_sem_letras, lista_de_palavras):
+    palavras_filtradas = []
+    print("Iniciout funcao")
+
+    for palavra in lista_de_palavras:
+        manter_palavra = True
+
+        for letra in array_sem_letras:
+            if letra in palavra:
+                manter_palavra = False
+                break
+        if manter_palavra:
+            palavras_filtradas.append(palavra)
+    return palavras_filtradas
+
+print("Gerou o array pronto")
+palavras_filtradas_prontas = limpa_palavras(array_sem_letras, lista_de_palavras)
+
+# Mostra o Array pronto
+# print(palavras_filtradas_prontas)
 
 
 
 
+# palavras_restantes = limpa_palavras(letrinha, lista_de_palavras)
+# Imprime a lista de palavras total que sobraram   
+                
+##################
 
 
 
-
-def encontrar_letra(palavras, letra):
-    palavras_com_letra = []
-    for palavra in palavras:
-        if letra in palavra:
-            palavras_com_letra.append(palavra)
-    return palavras_com_letra
-
-# Exemplo de uso
-
-
-
-resultado = encontrar_letra(lista_de_palavras, letra_procurada)
-print("Palavras que contêm a letra '{}':".format(letra_procurada))
-print(resultado)
