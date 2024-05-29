@@ -22,6 +22,7 @@ print("Step 2 - inicia e trata o array de letras")
 
 # Recebe todas as letras
 letras_permitidas = ["a", "u", "o", "d", "ç", "r", "p"]
+letra_obrigatoria = "ç"
 array_letras_portugues = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç']
 
 ##########
@@ -57,19 +58,110 @@ def limpa_palavras(array_sem_letras, lista_de_palavras):
             palavras_filtradas.append(palavra)
     return palavras_filtradas
 
-print("Gerou o array pronto")
 palavras_filtradas_prontas = limpa_palavras(array_sem_letras, lista_de_palavras)
 
 # Mostra o Array pronto
 # print(palavras_filtradas_prontas)
 
+################################################################
+print("Step 4 - Remove palavras de tamanhos errados")
 
+def verifica_tamanho(palavras_filtradas_prontas):
+    palavras_filtradas_tamanho = []
+    print("Iniciout funcao verifica_tamanho")
 
+    for palavra in palavras_filtradas_prontas:
+        manter_palavra = True
+        if len(palavra) < 4:
+            manter_palavra = False
+        if len(palavra) > 9:
+            manter_palavra = False
 
-# palavras_restantes = limpa_palavras(letrinha, lista_de_palavras)
-# Imprime a lista de palavras total que sobraram   
-                
-##################
+        if manter_palavra:
+            palavras_filtradas_tamanho.append(palavra)
+    return palavras_filtradas_tamanho
 
+palavras_filtradas_tamanho = verifica_tamanho(palavras_filtradas_prontas)
 
+# Imprime palavras filtradas por tamanho
+# print(palavras_filtradas_tamanho)
 
+################################################################
+print("Step 5 - Mantem apenas palavras com a letra obrigatoria")
+
+def verifica_obrigatoria(palavras_filtradas_tamanho):
+    respostas = []
+    print("Iniciout funcao verifica_obrigatoria")
+
+    for palavra in palavras_filtradas_tamanho:
+        manter_palavra = False
+
+        for letra in palavra:
+            if letra == letra_obrigatoria:
+                manter_palavra = True
+                break
+        if manter_palavra:
+            respostas.append(palavra)
+    return respostas
+
+respostas = verifica_obrigatoria(palavras_filtradas_tamanho)
+
+# Imprime as repostas
+# print(respostas)
+
+################################################################
+print("Step 6 - Print dos resultados")
+
+palavras_4 = []
+palavras_5 = []
+palavras_6 = []
+palavras_7 = []
+palavras_8 = []
+palavras_9 = []
+
+for palavra in respostas:
+    if len(palavra) == 4:
+        palavras_4.append(palavra)
+for palavra in respostas:
+    if len(palavra) == 5:
+        palavras_5.append(palavra)
+for palavra in respostas:
+    if len(palavra) == 6:
+        palavras_6.append(palavra)
+for palavra in respostas:
+    if len(palavra) == 7:
+        palavras_7.append(palavra)
+for palavra in respostas:
+    if len(palavra) == 8:
+        palavras_8.append(palavra)
+for palavra in respostas:
+    if len(palavra) == 9:
+        palavras_9.append(palavra)
+
+def imprime_tudo():
+    print("---------------------------------------------------------------------------------")
+    print("Letras do dia: " + str(letras_permitidas))
+    print("Letra Obrigatoria: " + str(letra_obrigatoria))
+    print("---------------------------------------------------------------------------------")
+    print("Palavras de 4 letras: ")
+    print(palavras_4)
+    print("---------------------------------------------------------------------------------")
+    print("Palavras de 5 letras: ")
+    print(palavras_5)
+    print("---------------------------------------------------------------------------------")
+    print("Palavras de 6 letras: ")
+    print(palavras_6)
+    print("---------------------------------------------------------------------------------")
+    print("Palavras de 7 letras: ")
+    print(palavras_7)
+    print("---------------------------------------------------------------------------------")
+    print("Palavras de 8 letras: ")
+    print(palavras_8)
+    print("---------------------------------------------------------------------------------")
+    print("Palavras de 9 letras: ")
+    print(palavras_9)
+    print("---------------------------------------------------------------------------------")
+    print("xXxXxX")
+    print("---------------------------------------------------------------------------------")
+
+imprime_tudo()
