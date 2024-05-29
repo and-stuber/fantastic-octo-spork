@@ -1,4 +1,5 @@
-letras_permitidas = ["a", "u", "o", "d", "ç", "r", "o", "p"]
+# Recebe todas as letras
+letras_permitidas = ["a", "u", "o", "d", "ç", "r", "p"]
 array_letras_portugues = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç']
 
 ###############################################################
@@ -13,4 +14,5 @@ def remover_letras(letras_a_remover, array_letras):
 
 array_sem_letras = remover_letras(letras_a_remover, array_letras_portugues)
 
-print(array_sem_letras)
+# Print de letras que sao permitidas na busca
+print(letras_permitidas)

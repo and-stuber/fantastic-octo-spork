@@ -1,3 +1,7 @@
+###############################################################
+print("Step 1 - Carrega o arquivo de palavras na memoria")
+
+
 def extrair_palavras(arquivo):
     with open(arquivo, 'r', encoding='utf-8') as f:
         texto = f.read()
@@ -7,7 +11,6 @@ def extrair_palavras(arquivo):
         # Divida o texto em palavras
         palavras = texto.split()
         return palavras
-
 # Nome do arquivo de texto
 arquivo_txt = 'palavras.txt'
 
@@ -15,9 +18,10 @@ arquivo_txt = 'palavras.txt'
 lista_de_palavras = extrair_palavras(arquivo_txt)
 
 ###############################################################
+print("Step 2 - inicia e trata o array de letras")
 
 # Recebe todas as letras
-letras_permitidas = ["a", "u", "o", "d", "ç", "r", "o", "p"]
+letras_permitidas = ["a", "u", "o", "d", "ç", "r", "p"]
 array_letras_portugues = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç']
 
 ###############################################################
@@ -32,9 +36,10 @@ def remover_letras(letras_a_remover, array_letras):
 
 array_sem_letras = remover_letras(letras_a_remover, array_letras_portugues)
 
-print(array_sem_letras)
+# Print de letras que sao permitidas na busca
+print("Letras permitidas: " + letras_permitidas)
 
-
+################################################################
 
 
 
