@@ -5,10 +5,11 @@ from data_cleanup import limpa_palavras
 from lenght_check import verifica_tamanho
 from check_main import verifica_obrigatoria
 from writefile import grava_resultados
+from bot_unicode import results_to_unicode
 
 ########## 1
 # Nome do arquivo de texto
-arquivo_txt = './data/palavras_new.txt'
+arquivo_txt = './data/palavras_new_unicode.txt'
 
 # Extrai as palavras do arquivo
 print(str(datetime.now().time()) + " Gerando lista...")
@@ -17,8 +18,8 @@ print(str(datetime.now().time()) + " Lista pronta")
 
 ########## 2
 # Recebe todas as letras
-letras_permitidas = ["a", "e", "i", "t", "l", "v", "d"]
-letra_obrigatoria = "v"
+letras_permitidas = ["a", "o", "e", "c", "n", "g", "h"]
+letra_obrigatoria = "c"
 array_letras_portugues = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç']
 
 letras_a_remover = letras_permitidas
@@ -53,6 +54,9 @@ respostas = verifica_obrigatoria(palavras_filtradas_tamanho, letra_obrigatoria)
 print(str(datetime.now().time()) + " Gravando aquivo de respostas")
 
 grava_resultados(respostas)
+
+# print("E tambem unidecode....")
+# results_to_unicode()
 
 ########## 7
 ################################################################
