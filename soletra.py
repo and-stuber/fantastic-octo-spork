@@ -12,7 +12,7 @@ def extrair_palavras(arquivo):
         palavras = texto.split()
         return palavras
 # Nome do arquivo de texto
-arquivo_txt = 'palavras.txt'
+arquivo_txt = 'palavras_new.txt'
 
 # Extrai as palavras do arquivo
 lista_de_palavras = extrair_palavras(arquivo_txt)
@@ -21,8 +21,8 @@ lista_de_palavras = extrair_palavras(arquivo_txt)
 print("Step 2 - inicia e trata o array de letras")
 
 # Recebe todas as letras
-letras_permitidas = ["a", "u", "o", "d", "ç", "r", "p"]
-letra_obrigatoria = "ç"
+letras_permitidas = ["a", "e", "i", "t", "l", "v", "d"]
+letra_obrigatoria = "v"
 array_letras_portugues = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç']
 
 ##########
@@ -74,7 +74,7 @@ def verifica_tamanho(palavras_filtradas_prontas):
         manter_palavra = True
         if len(palavra) < 4:
             manter_palavra = False
-        if len(palavra) > 9:
+        if len(palavra) > 13:
             manter_palavra = False
 
         if manter_palavra:
@@ -118,6 +118,7 @@ palavras_6 = []
 palavras_7 = []
 palavras_8 = []
 palavras_9 = []
+palavras_10 = []
 
 for palavra in respostas:
     if len(palavra) == 4:
@@ -137,6 +138,9 @@ for palavra in respostas:
 for palavra in respostas:
     if len(palavra) == 9:
         palavras_9.append(palavra)
+for palavra in respostas:
+    if len(palavra) > 9:
+        palavras_10.append(palavra)
 
 def imprime_tudo():
     print("---------------------------------------------------------------------------------")
@@ -160,6 +164,9 @@ def imprime_tudo():
     print("---------------------------------------------------------------------------------")
     print("Palavras de 9 letras: ")
     print(palavras_9)
+    print("---------------------------------------------------------------------------------")
+    print("Palavras de muitas muitas letras: ")
+    print(palavras_10)
     print("---------------------------------------------------------------------------------")
     print("xXxXxX")
     print("---------------------------------------------------------------------------------")
