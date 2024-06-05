@@ -18,4 +18,3 @@ array_sem_letras = remover_letras(letras_a_remover, array_letras_portugues)
 # Print de letras que sao permitidas na busca e letras removidas
 print("Letras Permitidas: " + str(letras_permitidas))
 print("Letras removidas: " + str(array_sem_letras))
-
