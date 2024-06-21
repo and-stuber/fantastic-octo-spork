@@ -9,7 +9,7 @@ from bot_unicode import results_to_unicode
 
 ########## 1
 # Nome do arquivo de texto
-arquivo_txt = './data/palavras_new_unicode.txt'
+arquivo_txt = './data/new_worlds_list.txt'
 
 # Extrai as palavras do arquivo
 print(str(datetime.now().time()) + " Gerando lista...")
@@ -18,8 +18,8 @@ print(str(datetime.now().time()) + " Lista pronta")
 
 ########## 2
 # Recebe todas as letras
-letras_permitidas = ["a", "o", "e", "c", "n", "g", "h"]
-letra_obrigatoria = "c"
+letras_permitidas = ["a", "e", "u", "r", "c", "t", "z"]
+letra_obrigatoria = "u"
 array_letras_portugues = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ç']
 
 letras_a_remover = letras_permitidas
@@ -100,6 +100,7 @@ def imprime_tudo():
     print("---------------------------------------------------------------------------------")
     print("Letras do dia: " + str(letras_permitidas))
     print("Letra Obrigatoria: " + str(letra_obrigatoria))
+    print("Total de Palavras: " + str(len(respostas)))
     print("---------------------------------------------------------------------------------")
     print("Palavras de 4 letras: ")
     print(palavras_4)
